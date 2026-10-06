@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Html, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { useState } from "react";
 
 const atoms = [
@@ -26,19 +26,19 @@ export default function Molecule() {
             <mesh key={i} position={a.pos} onClick={() => setActive(i)}>
               <sphereGeometry args={[a.r, 32, 32]} />
               <meshStandardMaterial color={a.color} roughness={0.5} />
-              <Html center distanceFactor={6} position={[0, a.r + 0.25, 0]}>
-                <button
-                  onClick={() => setActive(i)}
-                  className={`whitespace-nowrap border border-ink px-1.5 font-mono text-[10px] ${active === i ? "bg-marker" : "bg-card"}`}
-                >
-                  {a.label === "Oxygen" ? "O" : "H"}
-                </button>
-              </Html>
             </mesh>
           ))}
         </group>
         <OrbitControls enableZoom={false} enablePan={false} autoRotate={false} />
       </Canvas>
+      <div className="absolute left-2 top-2 flex gap-1">
+        {atoms.map((a, i) => (
+          <button key={i} onClick={() => setActive(i)} aria-pressed={active === i}
+            className={`border border-ink px-1.5 font-mono text-[10px] ${active === i ? "bg-marker" : "bg-card"}`}>
+            {a.label === "Oxygen" ? "O" : `H${i}`}
+          </button>
+        ))}
+      </div>
       {active !== null && (
         <p className="absolute bottom-0 left-0 right-0 border-t border-dashed border-ink bg-card/90 p-2 text-xs" aria-live="polite">
           <strong className="font-mono">{atoms[active].label}:</strong> {atoms[active].note}

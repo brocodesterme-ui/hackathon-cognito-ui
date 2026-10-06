@@ -194,7 +194,7 @@ const Bar = ({ v, label }: { v: number; label: string }) => (
 function StudentMock() {
   return (
     <div className="space-y-3">
-      <div className="border border-ink bg-card p-2">🔍 &nbsp;<span className="text-muted-foreground">search a topic…</span> <span className="text-tomato">refraction</span></div>
+      <div className="border border-ink bg-card p-2">⌕ &nbsp;<span className="text-muted-foreground">search a topic…</span> <span className="text-tomato">refraction</span></div>
       <div className="grid grid-cols-4 gap-2">{["cards", "quiz", "map", "sim"].map((x) => <div key={x} className="border border-ink bg-card p-2 text-center">{x}</div>)}</div>
       <Bar v={64} label="Level 4 XP" />
     </div>

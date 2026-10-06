@@ -10,7 +10,7 @@ export function DemoCard({ tag, title, className = "", children }: { tag: string
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5 }}
-      className={`card-ink flex flex-col p-5 ${className}`}
+      className={`card-ink flex min-w-0 flex-col p-5 ${className}`}
     >
       <span className="font-mono text-xs uppercase tracking-wider text-tomato">{tag}</span>
       <h3 className="mt-1 text-2xl font-semibold">{title}</h3>
@@ -175,7 +175,7 @@ export function BrainMap() {
 
   return (
     <div>
-      <svg ref={svgRef} viewBox="0 0 300 220" className="dot-grid w-full touch-none select-none border border-ink"
+      <svg ref={svgRef} viewBox="0 0 300 220" className="dot-grid mx-auto max-h-80 w-full touch-none select-none border border-ink"
         onPointerMove={(e) => {
           if (!drag.current) return;
           drag.current.moved = true;

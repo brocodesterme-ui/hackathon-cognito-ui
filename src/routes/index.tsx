@@ -109,7 +109,7 @@ function Features() {
     <section id="features" className="border-t border-ink bg-muted/40 px-5 py-20 sm:px-8 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHead n="1" kicker="every one of these works, try them" title={<>One topic, <span className="relative inline-block">seven<Circle className="absolute -inset-x-3 -inset-y-2 h-[130%] w-[115%] text-tomato" /></span> ways in.</>} />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <DemoCard tag="01 · flashcards" title="Flip. Swipe. Repeat." className="-rotate-1"><Flashcards /></DemoCard>
           <DemoCard tag="02 · quiz" title="Three quick ones" className="lg:row-span-2 lg:mt-10"><Quiz /></DemoCard>
           <DemoCard tag="03 · analogies" title="Explain it like…" className="rotate-1"><Analogies /></DemoCard>

@@ -74,7 +74,7 @@ export function Pendulum() {
       ctx.fillText(`L = ${L.toFixed(1)} m`, px + 10 + (r / 2) * Math.sin(s.theta) + 14, py + (r / 2) * Math.cos(s.theta));
       ctx.font = "12px 'JetBrains Mono', monospace";
       ctx.fillStyle = tomato;
-      ctx.fillText("← mass doesn't matter!", Math.min(bx + 22, w - 170), by + 4);
+      ctx.fillText("← mass doesn't matter!", Math.min(bx + 22, w - 180), by + 4);
       raf = requestAnimationFrame(draw);
     };
     raf = requestAnimationFrame(draw);
